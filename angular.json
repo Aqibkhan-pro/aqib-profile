@@ -10,7 +10,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "anees-profile": {
+    "aqib-profile": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -70,10 +70,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "anees-profile:build:production"
+              "buildTarget": "aqib-profile:build:production"
             },
             "development": {
-              "buildTarget": "anees-profile:build:development"
+              "buildTarget": "aqib-profile:build:development"
             }
           },
           "defaultConfiguration": "development"

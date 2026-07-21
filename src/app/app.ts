@@ -6,13 +6,7 @@ type GalleryImage = {
   caption: string;
 };
 
-type GalleryKey =
-  | 'bemis'
-  | 'mobileSentrixWeb'
-  | 'mobileSentrix'
-  | 'projul'
-  | 'pinghub'
-  | 'soolah';
+type GalleryKey = 'bemis' | 'mobileSentrixWeb' | 'techbarHrms' | 'techbarPosHrms';
 
 type GalleryProject = {
   eyebrow: string;
@@ -25,15 +19,15 @@ type GalleryProject = {
   styleUrl: './app.scss',
 })
 export class App implements AfterViewInit, OnDestroy {
-  protected readonly title = signal('anees-profile');
+  protected readonly title = signal('aqib-profile');
   protected readonly galleryOpen = signal(false);
   protected readonly activeGalleryKey = signal<GalleryKey>('bemis');
   protected readonly activeGalleryIndex = signal(0);
   protected readonly bemisGallery: GalleryImage[] = [
     {
       src: 'projects/bemis-portal-home.png',
-      title: 'BEMIS Web Portal',
-      caption: 'Public portal landing page for education governance and EMIS access.',
+      title: 'EMIS Web Portal',
+      caption: 'Education governance portal with access to EMIS modules and reporting.',
     },
     {
       src: 'projects/bemis-dashboard-risk.png',
@@ -69,6 +63,48 @@ export class App implements AfterViewInit, OnDestroy {
       src: 'projects/bemis-monitoring-reports.png',
       title: 'Monitoring Reports',
       caption: 'District and indicator monitoring reports with searchable filters.',
+    },
+  ];
+  protected readonly techbarHrmsGallery: GalleryImage[] = [
+    {
+      src: 'projects/mobile-sentrix-clock.png',
+      title: 'Techbar Attendance',
+      caption: 'HRMS clock-in dashboard with attendance status, quick actions and mobile navigation.',
+    },
+    {
+      src: 'projects/mobile-sentrix-dashboard.png',
+      title: 'Employee Dashboard',
+      caption: 'Employee summary dashboard with tasks, attendance and quick workflow access.',
+    },
+    {
+      src: 'projects/mobile-sentrix-scheduler.png',
+      title: 'Schedule Management',
+      caption: 'Employee schedule screen with dates, shifts, role details and attendance actions.',
+    },
+    {
+      src: 'projects/mobile-sentrix-chat.png',
+      title: 'Team Chat',
+      caption: 'Real-time team messaging and communication entry points for HRMS users.',
+    },
+    {
+      src: 'projects/mobile-sentrix-tasks.png',
+      title: 'Task Management',
+      caption: 'Task list with priority, status, assignments and quick task handling.',
+    },
+    {
+      src: 'projects/mobile-sentrix-documents.png',
+      title: 'Document Handling',
+      caption: 'Document workflow screen for employee records, requests and recent files.',
+    },
+    {
+      src: 'projects/mobile-sentrix-notifications.png',
+      title: 'Notifications',
+      caption: 'Notification center for tasks, reminders, documents and HR updates.',
+    },
+    {
+      src: 'projects/mobile-sentrix-settings.png',
+      title: 'Settings',
+      caption: 'Mobile app settings for attendance, chat, notifications and user preferences.',
     },
   ];
   protected readonly mobileSentrixWebGallery: GalleryImage[] = [
@@ -108,138 +144,44 @@ export class App implements AfterViewInit, OnDestroy {
       caption: 'Document control drive with recent files, folders, list view and detail panel.',
     },
   ];
-  protected readonly mobileSentrixGallery: GalleryImage[] = [
+  protected readonly techbarPosHrmsGallery: GalleryImage[] = [
     {
-      src: 'projects/mobile-sentrix-clock.png',
+      src: 'projects/techbar-hrms-dashboard-dark.png',
+      title: 'HRMS Dashboard',
+      caption: 'Dark HRMS dashboard with schedule, approvals and asset overview.',
+    },
+    {
+      src: 'projects/techbar-hrms-clockin-dark.png',
       title: 'Clock-In Dashboard',
-      caption: 'Mobile HRMS home screen with quick actions, attendance clock and bottom navigation.',
+      caption: 'Dark attendance screen with clock-in timer, breaks and schedule information.',
     },
     {
-      src: 'projects/mobile-sentrix-dashboard.png',
-      title: 'Employee Dashboard',
-      caption: 'Personalized dashboard with quick actions, timesheet summary and approval queue.',
+      src: 'projects/techbar-hrms-login.png',
+      title: 'HRMS Login',
+      caption: 'Dark HRMS sign-in screen with branded onboarding and authentication flow.',
     },
     {
-      src: 'projects/mobile-sentrix-documents.png',
+      src: 'projects/techbar-hrms-documents.png',
       title: 'Document Control',
-      caption: 'Mobile document drive, requests, trash and recent document shortcuts.',
-    },
-    {
-      src: 'projects/mobile-sentrix-scheduler.png',
-      title: 'Scheduler',
-      caption: 'Employee schedule list with dates, shifts, roles and QR action access.',
-    },
-    {
-      src: 'projects/mobile-sentrix-chat.png',
-      title: 'Chat List',
-      caption: 'Team chat inbox with groups, unread filtering and video call entry points.',
-    },
-    {
-      src: 'projects/mobile-sentrix-notifications.png',
-      title: 'Notifications',
-      caption: 'Notification center for tasks, birthdays, documents and reminders.',
-    },
-    {
-      src: 'projects/mobile-sentrix-settings.png',
-      title: 'Settings',
-      caption: 'App settings for appearance, clock, chat, notifications, permissions and support.',
-    },
-    {
-      src: 'projects/mobile-sentrix-tasks.png',
-      title: 'Tasks',
-      caption: 'Task management screen with status, priority, assignments and quick creation.',
-    },
-  ];
-  protected readonly projulGallery: GalleryImage[] = [
-    {
-      src: 'projects/projul-home.png',
-      title: 'Projul Home',
-      caption: 'Construction management home screen with quick actions and upcoming projects.',
-    },
-    {
-      src: 'projects/projul-insights.png',
-      title: 'Insights',
-      caption: 'Contractor insights with guides, trust metrics and customer review sections.',
-    },
-    {
-      src: 'projects/projul-leads.png',
-      title: 'Lead Pipeline',
-      caption: 'Lead pipeline dashboard with funnel stages, close rate and recent leads.',
-    },
-    {
-      src: 'projects/projul-projects.png',
-      title: 'Projects',
-      caption: 'Project management screen with project categories, stats, maps and progress cards.',
-    },
-  ];
-  protected readonly pinghubGallery: GalleryImage[] = [
-    {
-      src: 'projects/pinghub-home.png',
-      title: 'PingHub Home',
-      caption: 'Charter truck delivery home screen with quick actions and active deliveries.',
-    },
-    {
-      src: 'projects/pinghub-services.png',
-      title: 'B2B Services',
-      caption: 'B2B logistics services with quotes, shipment records and downloadable reports.',
-    },
-    {
-      src: 'projects/pinghub-portal.png',
-      title: 'Portal Access',
-      caption: 'Secure portal access screen for logistics operations and shipment management.',
-    },
-    {
-      src: 'projects/pinghub-admin.png',
-      title: 'Operations Center',
-      caption: 'Admin operations center for tracking shipments, dispatching drivers and hub coordination.',
-    },
-  ];
-  protected readonly soolahGallery: GalleryImage[] = [
-    {
-      src: 'projects/soolah-home.png',
-      title: 'Soolah Home',
-      caption: 'One-click cleaning home screen with booking and cleaner onboarding entry points.',
-    },
-    {
-      src: 'projects/soolah-package.png',
-      title: 'Package Selection',
-      caption: 'Cleaning package selection with hourly pricing and service tiers.',
-    },
-    {
-      src: 'projects/soolah-bookings.png',
-      title: 'My Bookings',
-      caption: 'Upcoming bookings with cleaner details, schedule, address and booking actions.',
-    },
-    {
-      src: 'projects/soolah-cleaner.png',
-      title: 'Become a Cleaner',
-      caption: 'Cleaner onboarding screen highlighting schedule, pay and growth benefits.',
+      caption: 'Document hub for drive, document requests, trash and archive workflows.',
     },
   ];
   protected readonly galleryProjects: Record<GalleryKey, GalleryProject> = {
     bemis: {
-      eyebrow: 'BEMIS Project Gallery',
+      eyebrow: 'EMIS Module Gallery',
       images: this.bemisGallery,
     },
     mobileSentrixWeb: {
       eyebrow: 'Mobile Sentrix Web Gallery',
       images: this.mobileSentrixWebGallery,
     },
-    mobileSentrix: {
-      eyebrow: 'Mobile Sentrix Mobile Gallery',
-      images: this.mobileSentrixGallery,
+    techbarHrms: {
+      eyebrow: 'Techbar HRMS Mobile Gallery',
+      images: this.techbarHrmsGallery,
     },
-    projul: {
-      eyebrow: 'Projul App Gallery',
-      images: this.projulGallery,
-    },
-    pinghub: {
-      eyebrow: 'PingHub App Gallery',
-      images: this.pinghubGallery,
-    },
-    soolah: {
-      eyebrow: 'Soolah App Gallery',
-      images: this.soolahGallery,
+    techbarPosHrms: {
+      eyebrow: 'POS & HR Platform Gallery',
+      images: this.techbarPosHrmsGallery,
     },
   };
   private cleanup: Array<() => void> = [];
@@ -323,7 +265,18 @@ export class App implements AfterViewInit, OnDestroy {
   private setupTheme(): void {
     const root = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
-    const storedTheme = localStorage.getItem('theme');
+    const storage =
+      typeof window.localStorage?.getItem === 'function' &&
+      typeof window.localStorage?.setItem === 'function'
+        ? window.localStorage
+        : undefined;
+    let storedTheme: string | null = null;
+
+    try {
+      storedTheme = storage?.getItem('theme') ?? null;
+    } catch {
+      storedTheme = null;
+    }
 
     if (storedTheme) {
       root.setAttribute('data-theme', storedTheme);
@@ -344,7 +297,11 @@ export class App implements AfterViewInit, OnDestroy {
       const current = root.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      try {
+        storage?.setItem('theme', next);
+      } catch {
+        // Ignore unavailable storage in test or restricted browser contexts.
+      }
     };
 
     themeToggle.addEventListener('click', onToggleTheme);

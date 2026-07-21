@@ -20,6 +20,7 @@ describe('App', () => {
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Building');
-    expect(compiled.querySelector('h1')?.textContent).toContain('enterprise');
+    expect(compiled.querySelector('h1')?.textContent).toContain('real-time');
+    expect(compiled.textContent).toContain('Front End and Mobile Android IOS Developer');
   });
 });

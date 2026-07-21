@@ -302,18 +302,15 @@ nav{
 .project-shot .status{top:14px;right:14px;z-index:2;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .ms-web-project .project-shot{background:linear-gradient(135deg,rgba(17,24,39,.16),rgba(22,131,255,.12))}
 .ms-web-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(6,18,38,.38))}
-.mobile-sentrix-project .project-shot{background:radial-gradient(circle at 50% 28%,rgba(37,99,235,.24),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(37,99,235,.18),rgba(34,211,238,.12))}
-.mobile-sentrix-project .project-shot img{object-fit:contain;padding:10px}
-.mobile-sentrix-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(15,37,87,.3))}
-.projul-project .project-shot{background:radial-gradient(circle at 50% 30%,rgba(244,197,107,.28),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(221,122,31,.18),rgba(37,99,235,.1))}
-.projul-project .project-shot img{object-fit:contain;padding:10px}
-.projul-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(86,44,10,.28))}
-.pinghub-project .project-shot{background:radial-gradient(circle at 50% 30%,rgba(236,72,153,.26),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(201,21,98,.18),rgba(244,114,182,.12))}
-.pinghub-project .project-shot img{object-fit:contain;padding:10px}
-.pinghub-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(92,9,45,.28))}
-.soolah-project .project-shot{background:radial-gradient(circle at 50% 30%,rgba(36,168,255,.24),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(7,74,127,.18),rgba(36,168,255,.14))}
-.soolah-project .project-shot img{object-fit:contain;padding:10px}
-.soolah-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(7,35,70,.28))}
+.techbar-chat-project .project-shot{background:radial-gradient(circle at 50% 28%,rgba(22,131,255,.2),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(17,24,39,.16),rgba(22,131,255,.12))}
+.techbar-chat-project .project-shot img{object-fit:contain;padding:10px}
+.techbar-chat-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(6,18,38,.34))}
+.techbar-pos-project .project-shot{background:radial-gradient(circle at 52% 28%,rgba(138,18,56,.26),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(17,24,39,.24),rgba(138,18,56,.18))}
+.techbar-pos-project .project-shot img{object-fit:contain;padding:10px}
+.techbar-pos-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(39,7,20,.38))}
+.techbar-hrms-project .project-shot{background:radial-gradient(circle at 50% 28%,rgba(37,99,235,.24),rgba(255,255,255,.02) 58%),linear-gradient(135deg,rgba(37,99,235,.18),rgba(34,211,238,.12))}
+.techbar-hrms-project .project-shot img{object-fit:contain;padding:10px}
+.techbar-hrms-project .project-shot::after{background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(15,37,87,.3))}
 .proj:hover .project-shot img{transform:scale(1.055);filter:saturate(1.06)}
 .project-shot:focus-visible{outline:2px solid var(--accent-2);outline-offset:4px}
 .mini-tags{display:flex;flex-wrap:wrap;gap:6px}
