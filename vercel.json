@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/anees-profile/browser",
+  "outputDirectory": "dist/aqib-profile/browser",
   "rewrites": [
     {
       "source": "/(.*)",
